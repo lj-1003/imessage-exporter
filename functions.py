@@ -21,7 +21,7 @@ def sqlQuery():
 
     baseQuery = f"""
     SELECT 
-        handle.id AS phone_number,
+        --handle.id AS phone_number,
 	    datetime(message.date / 1000000000 + 978307200, 'unixepoch', 'localtime') AS date,
 	    message.is_from_me,
 	    message.text
