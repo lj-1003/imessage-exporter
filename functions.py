@@ -1,14 +1,32 @@
 #-------------IMPORTS--------------------------------
 import sqlite3
 import os
-import getpass
+import shutil
+import shlex
 #----------------------------------------------------
 
 def dataDirect():
     global db_path
-    username = getpass.getuser()
+
+    rawPath = input("Drag and drop the file here: ").strip().strip('"')
+
+    # Convert shell-like string to proper path (handles quotes and \ escapes)
+    newPath = shlex.split(rawPath)[0]
+
+    # Expand ~ if user dragged something from home dir
+    newPath = os.path.expanduser(newPath)
+
+    copyLocation = "input"
+
+    os.makedirs(copyLocation, exist_ok=True)
+    shutil.copy(newPath, copyLocation)
+
+    print(f"Copied {newPath} into {copyLocation}/")
+
     os.getcwd
     db_path = "input/sms.db"
+
+   
 
 def sqlQuery():
     global contact
