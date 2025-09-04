@@ -6,7 +6,7 @@ logging.basicConfig(filename='logs.txt',
                     level=logging.DEBUG,
                     format='%(asctime)s -  %(levelname)s -  %(message)s')
 try:
-    from functions import dataDirect, sqlQuery, dothething
+    from functions import dataDirect, sqlQuery, dothething, deleteData
     logging.debug("Functions imported successfully!")
 except:
     logging.critical("functions.py file not found!")
@@ -15,12 +15,9 @@ except:
 #----------------------------------------------------
 print("#" * 70)
 print("Welcome to")
-print("iMessage Exporter!")
+print("iTextPorter!")
 print("#" * 70)
-print("By using this program, you")
-print("1: claim to have read and understand the instructions in the README.")
-print("2: understand this program is under development, and is by no means perfect, therefore errors might occur.")
-print("3: understand that Levi Eck (the developer) is not responsible for data loss or other issues that might occur.")
+print("By continuing, you claim to have read and understand the instructions in the README.")
 print()
 agree = ('1')
 disagree = ('2')
@@ -47,6 +44,7 @@ while True:
                 break
             else:
                 continue
+        deleteData()
         print()
         print("Thanks for using this program!")
         print("Goodbye!")
@@ -58,5 +56,5 @@ while True:
     else:
         print("That is not a valid option.")
         print()
-print("#" * 70)       
+print("#" * 70)    
 sys.exit

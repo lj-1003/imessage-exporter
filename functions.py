@@ -3,6 +3,7 @@ import sqlite3
 import os
 import shutil
 import shlex
+import logging
 #----------------------------------------------------
 
 def dataDirect():
@@ -90,4 +91,10 @@ def dothething():
     conn.close()
     print("#" * 70)
 
-    
+def deleteData():
+    os.getcwd
+    if os.path.exists(db_path):
+        os.remove(db_path)
+        logging.debug(f"File '{db_path}' deleted successfully.")
+    else:
+        logging.debug(f"File '{db_path}' does not exist.")    
