@@ -1,6 +1,5 @@
 #-------------IMPORTS--------------------------------
 import sys
-import os
 import logging
 logging.basicConfig(filename='logs.txt',
                     level=logging.DEBUG,
@@ -15,7 +14,7 @@ except:
 #----------------------------------------------------
 print("#" * 70)
 print("Welcome to")
-print("iTextPorter!")
+print("iMessage Exporter")
 print("#" * 70)
 print("By continuing, you claim to have read and understand the instructions in the README.")
 print()
